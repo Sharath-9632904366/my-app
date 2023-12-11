@@ -1,6 +1,12 @@
 pipeline
 {
-    agent { label 'demo' }
+    agent { label 'demo' } 
+    triggers {
+        pollSCM '* * * * *'
+    }
+
+
+
     stages
     {
         stage('clone')
