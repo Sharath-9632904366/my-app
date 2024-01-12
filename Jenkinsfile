@@ -19,12 +19,12 @@ pipeline {
         } 
         stage('BUILD') {
             steps {
-                sh  " mvn package"
+                sh  "mvn package"
             }
         } 
         stage('DEPLOY') {
             steps {
-                sh  "scp target/app.war root@172.17.0.4:/opt/apache-tomcat-9.0.83/webapps"
+                sh  "scp target/app.war root@172.17.0.2:/opt/apache-tomcat-9.0.83/webapps"
             }
         }  
         stage('DOCKER_BUILD') {
